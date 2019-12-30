@@ -3,7 +3,6 @@ package org.cuckoo.entity.generator;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Map;
@@ -16,14 +15,8 @@ public class FreeMarker {
 	private static Configuration cfg = new Configuration(Configuration.VERSION_2_3_29);
 	
 	static {
-		try {
-			String templatePathDir = "src/main/resources/templates";
-			cfg.setDirectoryForTemplateLoading(new File(templatePathDir));
-			cfg.setDefaultEncoding("UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.exit(0);
-		}
+		cfg.setClassForTemplateLoading(FreeMarker.class, "/templates");
+		cfg.setDefaultEncoding("UTF-8");
 	}
 
 	public static void create(String templateFileName, Map<String, Object> model, String outputFilePath) {
