@@ -16,7 +16,7 @@ public class EntityGenerator {
 		
 		if (args.length == 0) {
 			System.out.println("Usage errors, You must run the command like this:");
-			System.out.println("java -jar EntityGenerator.jar /home/entity-generator.properties");
+			System.out.println("java -jar entity-generator-x.x.x.jar /home/config-entities.properties");
 			System.exit(0);
 		}
 		
