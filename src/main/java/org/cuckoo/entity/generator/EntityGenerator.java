@@ -8,6 +8,11 @@ import java.util.Map;
 
 import org.cuckoo.entity.generator.utils.FileGenerationUtils;
 
+/**
+ * EntityGenerator
+ *
+ * 打包插件：maven-assembly-plugin，运行命令：mvn assembly:assembly
+ */
 public class EntityGenerator {
 	
 	public static List<String> messages = new ArrayList<>();
@@ -16,7 +21,7 @@ public class EntityGenerator {
 		
 		if (args.length == 0) {
 			System.out.println("Usage errors, You must run the command like this:");
-			System.out.println("java -jar entity-generator-x.x.x.jar /home/config-entities.properties");
+			System.out.println("java -jar /target/entity-generator-x.x.x.jar /storage/workspace/idea/project/src/main/resources/entity.properties");
 			System.exit(0);
 		}
 		
